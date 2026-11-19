@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(115deg, #8e9092 1.68%, #000000 30.67%);
+  transition: all 0.3s ease;
+}
+
+.app-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.app-shell.no-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-shell.has-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-shell[class*="-selected"] {
+  background: #000000;
+}
+
+.app-shell[class*="-selected"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 450px;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%),
+    var(--team-bg);
+  background-size:
+    100% 100%,
+    cover;
+  background-position:
+    center top,
+    center top;
+  background-repeat: no-repeat;
+}
+
+.app-shell.athletic-selected {
+  --team-bg: url("/background/athletic-club1.jpg");
+}
+.app-shell.atletico-selected {
+  --team-bg: url("/background/atletico-madrid1.jpeg");
+}
+.app-shell.barcelona-selected {
+  --team-bg: url("/background/barcelona.webp");
+}
+.app-shell.celta-selected {
+  --team-bg: url("/background/celta-vigo1.jpg");
+}
+.app-shell.alaves-selected {
+  --team-bg: url("/background/deportivo1.jpg");
+}
+.app-shell.elche-selected {
+  --team-bg: url("/background/elche1.webp");
+}
+.app-shell.espanyol-selected {
+  --team-bg: url("/background/espanyol.jpg");
+}
+.app-shell.getafe-selected {
+  --team-bg: url("/background/getafe1.webp");
+}
+.app-shell.girona-selected {
+  --team-bg: url("/background/girona1.jpeg");
+}
+.app-shell.levante-selected {
+  --team-bg: url("/background/levante1.jpg");
+}
+.app-shell.mallorca-selected {
+  --team-bg: url("/background/mallorca1.jpg");
+}
+.app-shell.osasuna-selected {
+  --team-bg: url("/background/osasuna1.webp");
+}
+.app-shell.oviedo-selected {
+  --team-bg: url("/background/oviedo.jpg");
+}
+.app-shell.rayo-selected {
+  --team-bg: url("/background/rayo1.jpg");
+}
+.app-shell.betis-selected {
+  --team-bg: url("/background/real-betis.webp");
+}
+.app-shell.madrid-selected {
+  --team-bg: url("/background/real-madrid1.webp");
+}
+.app-shell.sociedad-selected {
+  --team-bg: url("/background/real-sociedad1.png");
+}
+.app-shell.sevilla-selected {
+  --team-bg: url("/background/sevilla1.jpeg");
+}
+.app-shell.valencia-selected {
+  --team-bg: url("/background/valencia.jpg");
+}
+.app-shell.villarreal-selected {
+  --team-bg: url("/background/villareal1.jpg");
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+
+.controls select,
+.controls button {
+  height: 64px;
+  background: #2b2f3a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0 24px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.controls select {
+  width: 320px;
+  height: 64px;
+  padding: 0 50px 0 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #2b2f3a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 24px;
+  position: relative;
+  z-index: 11;
+}
+
+.controls select option {
+  background-color: #2b2f3a;
+  color: white;
+}
+
+.controls button {
+  min-width: 120px;
+  transition: background 0.2s ease;
+}
+
+.controls button:hover {
+  background: #414858;
+}
+
+.has-stats .controls {
+  justify-content: center;
+}
